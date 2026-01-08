@@ -418,23 +418,39 @@ table {
 }
 
 .container {
-  display: grid;
-  align-items: center;
-  width: 400px;
-  height: fit-content;
-  grid-template-columns: auto auto;
+  display: flex;
+  justify-content: center; /* center all project boxes horizontally */
+  gap: 20px;
+  padding: 10px;
+  flex-wrap: wrap;         /* wrap to new line if needed */
+  background-color: lightgray;
 }
 
-.container > div {
+.project {
+  flex: 0 0 150px;       /* fixed width */
   padding: 10px;
-  font-size: 11px;
+  display: flex;
+  flex-direction: column;  /* stack image and text */
+  align-items: center;     /* center everything horizontally */
   text-align: center;
-  background-color: #e2e2e2;
-  border: 2px solid #aed750;
 }
 
 .project img {
-  width: 150px;
+  width: 100%;        /* fill the project box */
+  max-width: 150px;   /* optional cap */
+  height: auto;
+  display: block;
+}
+
+.project img:hover {
+  transform: scale(1.03);
+  transition: transform 0.5s;
+}
+
+.project-text {
+  font-family: 'Mojangle', sans-serif;
+  margin-top: 10px;
+  text-align: center;
 }
 
 /* .title-overlay {
